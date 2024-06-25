@@ -1,0 +1,245 @@
+body {
+    font-family: @font-stack;
+    margin: 0;
+    padding: 0;
+    background-color: @bg-color;
+    color: @text-color;
+}
+
+header {
+    display: flex;
+    background-color: @header-bg;
+    color: @header-text;
+    align-items: center;
+    padding: 0.5rem 1rem;
+
+    img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        order: 0;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        order: 1;
+    }
+
+    nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        order: 2;
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    color: @header-text;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: lighten(@header-text, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+
+    .hero-content {
+        max-width: 800px;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 10px;
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    }
+}
+
+.card {
+    width: 232px;
+    margin: 0.5rem 0.75rem;
+    box-shadow: 3px 3px 5px @card-shadow;
+    background-color: @card-bg;
+
+    &.done {
+        background-color: @done-bg;
+    }
+
+    img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+    }
+
+    h4, p {
+        padding: 0.25rem 0.75rem;
+    }
+
+    p {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.8rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: @btn-bg;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: @btn-hover-bg;
+    }
+}
+
+section {
+    padding: 80px 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1rem;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-card {
+    background: @card-bg;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px @project-shadow;
+    flex: 1 1 300px;
+    max-width: 45%;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: @project-hover;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    box-shadow: 3px 3px 5px @form-shadow;
+    padding: @form-padding;
+    max-width: 920px;
+    text-align: initial;
+
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    input, textarea {
+        display: block;
+        min-width: 280px;
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+        border: none;
+        border-bottom: 1px solid @table-border;
+        margin-top: 0.25rem;
+    }
+}
+
+button {
+    padding: 15px;
+    margin-top: 20px;
+    background-color: @footer-bg;
+    color: @footer-text;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: @btn-hover-bg;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: @footer-bg;
+    color: @footer-text;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    .social-links a {
+        color: @footer-text;
+        margin: 0 10px;
+        font-size: 1.5em;
+        transition: color 0.3s;
+
+        &:hover {
+            color: @social-hover;
+        }
+    }
+}
+
+table {
+    tr {
+        border-bottom: @table-border;
+    }
+
+    td, th {
+        padding: 0.25rem 0.5rem;
+    }
+
+    tr:nth-child(2n) {
+        background-color: @table-stripe;
+    }
+
+    thead, tfoot {
+        background-color: @table-header;
+        color: @table-header-text;
+    }
+}
